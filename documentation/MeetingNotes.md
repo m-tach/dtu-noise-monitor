@@ -1,1 +1,5 @@
 # 13.02.2020
+1) Blink LED on board, with Atmel and Arduino IDE.
+2) Read the white paper/website of the board [https://learn.sodaq.com/Boards/Sara_AFF/#pin-definitions]
+3) Contact Alberto for the microphone code (existing code of the MSc student)
+4) Decide on the Atmel or Arduino IDE
