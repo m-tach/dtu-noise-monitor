@@ -14,4 +14,4 @@ Metting with Alberto:
    - sound classification algorithm - next semester
  - design with extending in mind: loudness sensor, pollution sensor
  - accelerometer - consider in the case of a car moving, you need to only measure for when it's stopped 
- - microphone is not very precise; 
+ - microphone is not very precise; maybe external board with analog parts
