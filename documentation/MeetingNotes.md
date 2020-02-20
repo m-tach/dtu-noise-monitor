@@ -8,6 +8,7 @@
 Metting with Alberto:
  - Phonometer app - use for calibrating
  - FPGA
-   - connect to FPGA and run something over SPI 
-   - migrate code from phonometer (sw) to FPGA
+   - connect to FPGA over SPI 
+   - do addition on FPGA SPI 
+   - migrate heavy computation code from phonometer (sw) to FPGA
    - sound classification algorithm - next semester
