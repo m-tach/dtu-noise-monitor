@@ -7,3 +7,7 @@
 # 20.02.2020
 Metting with Alberto:
  - Phonometer app - use for calibrating
+ - FPGA
+   - connect to FPGA and run something over SPI 
+   - migrate code from phonometer (sw) to FPGA
+   - sound classification algorithm - next semester
