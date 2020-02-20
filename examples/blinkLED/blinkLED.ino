@@ -12,4 +12,5 @@ void loop() {
   digitalWrite(LED_BUILTIN, LOW); // OFF
   digitalWrite(LED_BLUE, LOW); // ON
   delay(500);
+  HI MARIYA
 }
