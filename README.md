@@ -10,3 +10,6 @@ Board description files can be found here: https://learn.sodaq.com/Boards/Sara_A
 
 2. C using ARDUINO IDE:  
  - board files available at https://raw.githubusercontent.com/SodaqMoja/Sodaq_boards/master/package_sodaq_index.json
+## Useful links/tutorials
+- https://thingsboard.io/docs/user-guide/integrations/sodaq/
+- https://github.com/SodaqMoja/Sodaq_Universal_Tracker
