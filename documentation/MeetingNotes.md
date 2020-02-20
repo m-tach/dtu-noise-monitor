@@ -12,5 +12,4 @@ Metting with Alberto:
    - do addition on FPGA SPI 
    - migrate heavy computation code from phonometer (sw) to FPGA
    - sound classification algorithm - next semester
- - loudness sensor
- - pollution sensor
+ - design with extending in mind: loudness sensor, pollution sensor
