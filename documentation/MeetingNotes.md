@@ -6,4 +6,4 @@
 
 # 20.02.2020
 Metting with Alberto:
- - Phonometer app 
+ - Phonometer app - use for calibrating
