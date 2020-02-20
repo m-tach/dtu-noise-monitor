@@ -13,3 +13,4 @@ Metting with Alberto:
    - migrate heavy computation code from phonometer (sw) to FPGA
    - sound classification algorithm - next semester
  - design with extending in mind: loudness sensor, pollution sensor
+ - accelerometer - consider in the case of a car moving, you need to only measure for when it's stopped 
