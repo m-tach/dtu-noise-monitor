@@ -3,3 +3,7 @@
 2) Read the white paper/website of the board [https://learn.sodaq.com/Boards/Sara_AFF/#pin-definitions]
 3) Contact Alberto for the microphone code (existing code of the MSc student)
 4) Decide on the Atmel or Arduino IDE
+
+# 20.02.2020
+Metting with Alberto:
+ - Phonometer app 
