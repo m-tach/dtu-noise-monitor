@@ -17,7 +17,7 @@ For this project, we use modular development, to enable collaboration and reduce
 User story: "I want to extend the current functionality to use the on-board GPS chip to read GPS coordinates".
 1. Create a new folder in `noise-monitoring/libraries` called GPSController
 2. Inside `noise-monitoring/libraries/GPSController` add two files: GPSController.h and GPSController.c
-3. Edit each file, following the templates from the `documentation` folder.
+3. Edit each file, following the templates from the `documentation` folder (called `ExampleController.h` and `ExampleController.c`).
 4. In the `main` sketch, include library `GPSController.h`.
 5. In the `loop()` of the `main` sketch, call the functions you need from the `GPSController.h`.
 
