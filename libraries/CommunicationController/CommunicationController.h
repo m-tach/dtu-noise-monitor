@@ -2,7 +2,7 @@
 #define _COMMUNCATION_CONTROLLER_h   
 
 #include "Arduino.h"
-#include <portmap.h>
+#include <../portmap.h>
 
 /**
  * @brief Transmit/receive data. 
