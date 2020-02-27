@@ -1,12 +1,17 @@
 #include <CommunicationController.h>
+#include "Arduino.h"
 
+/**
+ * Contains main loop for Arduino sketch for noise-monitor.
+ */
 
 void setup() {
   // put your setup code here, to run once:
-
+  initUSBDriver();
 }
 
 void loop() {
-  // put your main code here, to run repeatedly:
-  test_function();
+  //transmit "Hello World" to serial port
+  sendMessage("Hello World");
+  
 }

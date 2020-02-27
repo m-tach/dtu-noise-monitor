@@ -1,8 +1,8 @@
 #include "Arduino.h"
-#include <CommunicationController.h>
+#include <ExampleController.h>
 
-
-void test_function() 
+// simple example test function blinks onboard leds
+void example_test_function() 
 {
   pinMode(LED_BUILTIN, OUTPUT);
   pinMode(LED_BLUE, OUTPUT);
@@ -16,4 +16,5 @@ void test_function()
     digitalWrite(LED_BLUE, LOW); // ON
     delay(500);
   }
+  
 }
