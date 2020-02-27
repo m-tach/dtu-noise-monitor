@@ -5,13 +5,13 @@
  * Contains main loop for Arduino sketch for noise-monitor.
  */
 
-void setup() {
-  // put your setup code here, to run once:
+void setup() 
+{
   initUSBDriver();
 }
 
-void loop() {
-  //transmit "Hello World" to serial port
-  sendMessage("Hello World");
-  
+void loop() 
+{
+  //transmit "Hello World" to anyone, monitoring the serial port
+  sendMessage("Hello World/n");
 }
