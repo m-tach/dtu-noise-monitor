@@ -1,7 +1,7 @@
 #ifndef gpsController_h
 #define gpsController_h
 
-#include "Arduino.h"
+#include <Arduino.h>
 
 #define WIRE_BUS 1
 #define SERIAL_BUS 2
@@ -25,14 +25,16 @@
 #define READ_TIMEOUT_MS 100
 
 #define BUFFER_SIZE 256
-uint8_t buffer[BUFFER_SIZE];
 
-#end if
+#endif
+
 
 class gpsCtlr
 {
    public:
-   void gpsEnable(bool state);
+   gpsCtlr();                      //Including enable operation
+   ~gpsCtlr();
+   //void gpsEnable(bool state);
    size_t readGPS();
    size_t readConsole();
    size_t readUbloxI2cStream();
@@ -41,4 +43,5 @@ class gpsCtlr
    void writeConsole(size_t count);
   // private:
    
-}
+};
+
