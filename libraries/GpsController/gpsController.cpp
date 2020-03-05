@@ -6,18 +6,9 @@ gpsCtlr::gpsCtlr(){
     //ENABLE GPS MODULE
     pinMode(GPS_ENABLE, OUTPUT);
     digitalWrite(GPS_ENABLE, true);
-
-    #if (GPS_INTERFACE == WIRE_BUS)
-     Wire.begin();
-    #elif (GPS_INTERFACE == SERIAL_BUS)
-    GPS_STREAM.begin(GPS_BAUD);
-    #endif
-
-    CONSOLE_STREAM.begin(CONSOLE_BAUD);
 }
 
 gpsCtlr::~gpsCtlr(){
-
 }
 
 size_t gpsCtlr::readGPS()
@@ -37,6 +28,7 @@ size_t gpsCtlr::readConsole()
 #if (GPS_INTERFACE == WIRE_BUS)
 size_t gpsCtlr::readUbloxI2cStream()
 {
+    memset(buffer, 0, BUFFER_SIZE);
     uint16_t count = 0;
     //Require signal to Ublox
     Wire.beginTransmission(GPS_ADR);
@@ -59,6 +51,7 @@ size_t gpsCtlr::readUbloxI2cStream()
 #endif
 
 size_t gpsCtlr::readSerialStream(Stream* stream){
+    memset(buffer, 0, BUFFER_SIZE);
     uint32_t last = millis();
     size_t count = 0;
     while ((count < BUFFER_SIZE) && (millis() < (last + READ_TIMEOUT_MS)))
@@ -74,7 +67,7 @@ size_t gpsCtlr::readSerialStream(Stream* stream){
 
 void gpsCtlr::writeGPS(size_t count)
 {
-    memset(buffer, 0, BUFFER_SIZE);
+    
     #if (GPS_INTERFACE == WIRE_BUS)
         Wire.beginTransmission(GPS_ADR);
         Wire.write(buffer,count);
@@ -88,7 +81,7 @@ void gpsCtlr::writeGPS(size_t count)
 
 void gpsCtlr::writeConsole(size_t count)
 {
-    memset(buffer, 0, BUFFER_SIZE);
+    
     for (size_t i = 0; i < count; i++){
         CONSOLE_STREAM.write(buffer[i]);
     }

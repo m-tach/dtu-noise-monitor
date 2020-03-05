@@ -1,7 +1,7 @@
-#ifndef gpsController_h
-#define gpsController_h
+#ifndef GPSCONTROLLER_H
+#define GPSCONTROLLER_H
 
-#include <Arduino.h>
+#include "Arduino.h"
 
 #define WIRE_BUS 1
 #define SERIAL_BUS 2
