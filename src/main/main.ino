@@ -7,7 +7,7 @@
 
 void setup() 
 {
-  initUSBDriver();
+  initCommunication();
 }
 
 void loop() 

@@ -1,6 +1,6 @@
 #include <CommunicationController.h>
 
-void initUSBDriver()
+void initCommunication()
 {
 	pinMode(powerPin, OUTPUT);
 	digitalWrite(powerPin, HIGH);
