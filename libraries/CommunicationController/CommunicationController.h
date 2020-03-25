@@ -4,11 +4,6 @@
 #include "Arduino.h"
 #include <../portmap.h>
 
-/**
- * @brief Transmit/receive data. 
- *
- * Current implementation uses USB.
- */
 #ifdef __cplusplus
 extern "C"{
 #endif
