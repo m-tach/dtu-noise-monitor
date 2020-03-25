@@ -1,7 +1,4 @@
-#include <Sodaq_R4X.h>
-#include <Sodaq_wdt.h>
-#include <string.h>
-
+#include <MicrophoneController.h>
 
 #define NS 20000
 
@@ -73,12 +70,12 @@ void initADC()
 }
   
 // Set the sleep mode
-void initSleep()
+void initSleep(void)
 {
     SCB->SCR |= SCB_SCR_SLEEPDEEP_Msk;
 }
 
-String readADC()
+void readADC(char *a, size_t asize)
 {
     int i = 0;
 
@@ -105,8 +102,8 @@ String readADC()
     float lat;
     float lon;
 
-    char a[13];
-    String value;
+    //char a[13];
+    //String value;
 
 
     sodaq_wdt_reset();                  // restting the watchdog
@@ -141,15 +138,15 @@ String readADC()
     }
 
     Leq = 10 * log10((sum / NS) / pr2);
-    SerialUSB.println(Leq);
+    //SerialUSB.println(Leq);
 
     memcpy(&a[0], &Leq, sizeof(Leq));  
     memcpy(&a[4], &lat, sizeof(lat));
     memcpy(&a[8], &lon, sizeof(lon));
     a[12] = 0;
-    value = String(a);
+    //value = String(a);
 
-    return value;
+    //return a;
 
 
     y1 = 0.0;

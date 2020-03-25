@@ -9,10 +9,15 @@
 void setup() 
 {
   initCommunication();
+  initADC();
 }
 
 void loop() 
 {
-  //transmit "Hello World" to anyone, monitoring the serial port
-  sendMessage("Hello World/n");
+  char adcReading[13] = "No reading\n";
+  sendMessage("Starting reading \n");
+  readADC(adcReading, 13);
+  sendMessage("Finished reading \n");
+  sendMessage(adcReading);
+  sendMessage("\n");
 }
