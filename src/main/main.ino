@@ -16,21 +16,14 @@ void setup()
 
 void loop() 
 {
-  sendMessage("Enter loop \n");
-  //create string buffer to transmit over USB
-  char buffer[80];
-  //instantiate message with all values set to 0
-  NoiseMonitorMessage* message; 
-  //read noise level from MicrophoneController
-  message->noiseLevel = readADC();
-  //TODO: read other things
-  //convert message to string
-  serialize(message, buffer);
-  //transmit string over USB
-  sendMessage(buffer);
-
-  //TODO: free up memory
-  systemSleep();
-
-  sendMessage("Exit loop \n");
+  sendMessage("\n Enter loop \n");
+  char buffer[512]; //create string buffer to transmit over USB
+  NoiseMonitorMessage message = {0, 0, 0, 0, 0, 0.0}; //instantiate message with all values set to 0
+  message.noiseLevel = readADC(); //read noise level from MicrophoneController
+  //TODO: read other things and populate message
+  message2Char(&message, buffer); //convert message to string
+  sendMessage(buffer);  //transmit string over USB
+  systemSleep(); //sleep - from Vittorio's code - i don't know why
+  //TODO: free up buffer to avoid memory leaks
+  sendMessage("Exit loop\n");
 }

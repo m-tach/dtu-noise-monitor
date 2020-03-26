@@ -28,6 +28,12 @@ struct NoiseMonitorMessage
  * @param message struct to convert
  * @param result contains string representation of message
  */
-void serialize( NoiseMonitorMessage* message, char * result);
+void message2Char( struct NoiseMonitorMessage* message, char * result);
+
+/*
+ * Experimental serialization of data to binary;
+ * 
+ */
+void serialize(struct NoiseMonitorMessage* message, char * result);
 
 #endif // _MESSAGE_h
