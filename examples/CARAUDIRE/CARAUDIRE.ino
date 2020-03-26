@@ -91,12 +91,12 @@ void setup() {
   DEBUG_STREAM.println("Initializing and connecting... ");
 
   r4x.setDiag(DEBUG_STREAM);
-  r4x.init(&saraR4xxOnOff, MODEM_STREAM);
-  r4x.connect(apn, urat);
+  //r4x.init(&saraR4xxOnOff, MODEM_STREAM);
+  //r4x.connect(apn, urat);
 
-  if (!r4x.connect(apn, urat)) {
-    DEBUG_STREAM.println("FAILED TO CONNECT TO MODEM");
-  }
+  //if (!r4x.connect(apn, urat)) {
+  //  DEBUG_STREAM.println("FAILED TO CONNECT TO MODEM");
+  //}
 
   initSleep();
 }
