@@ -1,3 +1,9 @@
+/**
+ * @note The logic in this controller has been ported from the sketch, available in examples/CARAUDIRE. 
+ * It is still a work in progress - a lot needs to be cleared out.
+ * 
+ */
+
 #include <MicrophoneController.h>
 
 #define NS 20000
@@ -20,12 +26,13 @@ static void syncADC()
 }
 
 /**
-   Powers down all devices and puts the system to deep sleep.
+ * Powers down all devices and puts the system to deep sleep.
+ * 
 */
 void systemSleep()
 {
-
-  __WFI(); // SAMD sleep
+    sodaq_wdt_enable(WDT_PERIOD_8X);    // watchdog expires in ~8 seconds
+    __WFI(); // SAMD sleep
 
 }
 
@@ -75,7 +82,8 @@ void initSleep(void)
     SCB->SCR |= SCB_SCR_SLEEPDEEP_Msk;
 }
 
-void readADC(char *a, size_t asize)
+
+float readADC(void)
 {
     int i = 0;
 
@@ -101,10 +109,6 @@ void readADC(char *a, size_t asize)
 
     float lat;
     float lon;
-
-    //char a[13];
-    //String value;
-
 
     sodaq_wdt_reset();                  // restting the watchdog
     sodaq_wdt_disable();
@@ -138,16 +142,6 @@ void readADC(char *a, size_t asize)
     }
 
     Leq = 10 * log10((sum / NS) / pr2);
-    //SerialUSB.println(Leq);
-
-    memcpy(&a[0], &Leq, sizeof(Leq));  
-    memcpy(&a[4], &lat, sizeof(lat));
-    memcpy(&a[8], &lon, sizeof(lon));
-    a[12] = 0;
-    //value = String(a);
-
-    //return a;
-
 
     y1 = 0.0;
     y2 = 0.0;
@@ -161,7 +155,6 @@ void readADC(char *a, size_t asize)
     buf23 = 0.0;
 
     sum = 0;
-
-    sodaq_wdt_enable(WDT_PERIOD_8X);    // watchdog expires in ~8 seconds
-    systemSleep();
+    
+    return Leq;
 }
