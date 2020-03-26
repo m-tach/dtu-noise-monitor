@@ -1,10 +1,12 @@
+/**
+ * @file Contains main loop for Arduino sketch for noise-monitor.
+ */
+
+#include "Arduino.h"
 #include <CommunicationController.h>
 #include <MicrophoneController.h>
-#include "Arduino.h"
+#include <Message.h>
 
-/**
- * Contains main loop for Arduino sketch for noise-monitor.
- */
 
 void setup() 
 {
@@ -14,10 +16,21 @@ void setup()
 
 void loop() 
 {
-  char adcReading[13] = "No reading\n";
-  sendMessage("Starting reading \n");
-  readADC(adcReading, 13);
-  sendMessage("Finished reading \n");
-  sendMessage(adcReading);
-  sendMessage("\n");
+  sendMessage("Enter loop \n");
+  //create string buffer to transmit over USB
+  char buffer[80];
+  //instantiate message with all values set to 0
+  NoiseMonitorMessage* message; 
+  //read noise level from MicrophoneController
+  message->noiseLevel = readADC();
+  //TODO: read other things
+  //convert message to string
+  serialize(message, buffer);
+  //transmit string over USB
+  sendMessage(buffer);
+
+  //TODO: free up memory
+  systemSleep();
+
+  sendMessage("Exit loop \n");
 }
