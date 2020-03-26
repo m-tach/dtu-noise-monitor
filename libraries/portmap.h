@@ -11,3 +11,7 @@
 #define powerPin SARA_ENABLE
 #define enablePin SARA_TX_ENABLE
 #define DEBUG_STREAM SerialUSB
+#define MODEM_STREAM Serial1
+#define DEBUG_STREAM_BAUD 9600
+#define STARTUP_DELAY 5000
+#define ACTIVITY_DELAY 30000
