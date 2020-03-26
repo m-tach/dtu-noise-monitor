@@ -16,20 +16,22 @@
 //Initializing a sodaq_nbiot class
 //Sodaq_nbIOT nbiot;
 
-
-void checkConnection(board, apn, cdp, forceOperator, band){
-    if (nbiot.isConnected()) {
+bool checkConnection(board, apn, cdp, forceOperator, band){
+    if (board.isConnected()) {
         DEBUG_STREAM.println("Board is already connected!");
+        return true
         //send message here
     } 
     else {
-      DEBUG_STREAM.println("Connecting...");     
-      if(nbiot.connect(apn, cdp, forceOperator, band)) {
-        DEBUG_STREAM.println("Connected!");
-        // send message here
-      }
-      else {
-        DEBUG_STREAM.println("Failed to connect!");
-      }
+        DEBUG_STREAM.println("Connecting...");     
+        if(board.connect(apn, cdp, forceOperator, band)) {
+            DEBUG_STREAM.println("Connected!");
+            return true
+            // send message here
+            }
+        else {
+            DEBUG_STREAM.println("Failed to connect!");
+            return true
+        }
     }
 }
