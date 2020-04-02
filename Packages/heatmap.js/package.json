@@ -1,0 +1,77 @@
+{
+  "_from": "heatmap.js",
+  "_id": "heatmap.js@2.0.5",
+  "_inBundle": false,
+  "_integrity": "sha1-Rm07hlE/XUkRKknSVwCrJzAUkVM=",
+  "_location": "/heatmap.js",
+  "_phantomChildren": {},
+  "_requested": {
+    "escapedName": "heatmap.js",
+    "fetchSpec": "latest",
+    "name": "heatmap.js",
+    "raw": "heatmap.js",
+    "rawSpec": "",
+    "registry": true,
+    "saveSpec": null,
+    "type": "tag"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/heatmap.js/-/heatmap.js-2.0.5.tgz",
+  "_shasum": "466d3b86513f5d49112a49d25700ab2730149153",
+  "_shrinkwrap": null,
+  "_spec": "heatmap.js",
+  "_where": "/home/kishan/server",
+  "author": {
+    "email": "heatmapjs@patrick-wied.at",
+    "name": "Patrick Wied",
+    "url": "https://www.patrick-wied.at/"
+  },
+  "buildFiles": [
+    "src/config.js",
+    "src/core.js",
+    "src/data.js",
+    "src/renderer.js",
+    "src/renderer/canvas2d.js",
+    "src/util.js"
+  ],
+  "bundleDependencies": false,
+  "dependencies": {},
+  "deprecated": false,
+  "description": "Dynamic JavaScript Heatmaps for the Web",
+  "devDependencies": {
+    "coffee-script": ">= 1.6.3",
+    "grunt": ">= 0.4.1",
+    "grunt-contrib-concat": ">= 0.1.3",
+    "grunt-contrib-jshint": ">= 0.3.0",
+    "grunt-contrib-uglify": ">= 0.2.0",
+    "grunt-contrib-watch": "0.2.0rc7"
+  },
+  "files": [
+    "LICENSE",
+    "README.md",
+    "build",
+    "docs",
+    "examples",
+    "package.json",
+    "plugins"
+  ],
+  "homepage": "https://www.patrick-wied.at/static/heatmapjs/",
+  "keywords": [
+    "googlemaps heatmap",
+    "heat map",
+    "heat maps",
+    "heatmap",
+    "heatmaps",
+    "leaflet",
+    "leaflet heatmap"
+  ],
+  "main": "build/heatmap.js",
+  "name": "heatmap.js",
+  "optionalDependencies": {},
+  "readme": "# heatmap.js\nDynamic Heatmaps for the Web. \n\n[<img src=\"http://www.patrick-wied.at/static/heatmapjs/assets/img/heatmapjs-examples-docs-banner.jpg\" width=\"100%\">](http://www.patrick-wied.at/static/heatmapjs/?utm_source=npm&utm_medium=web \"View the heatmap.js website with usage examples, showcases, best practises, plugins ( googlemaps heatmap, leaflet) and more.\")\n\n## How to get started\n\nThe fastest way to get started is to install heatmap.js with bower. Just run the following command:\n\n`bower install heatmap.js-amd`\n\nThis will download the latest working version of heatmap.js and put it in your bower_components folder.\n\nAlternatively you could just download [the latest release](https://github.com/pa7/heatmap.js/releases) from github and unzip it.\n\n\nThe file you're ultimately looking for is **heatmap.js** or **heatmap.min.js**\n\n\n\nheatmap.js is also hosted on npm:\n\n`npm install heatmap.js`\n\n\n\n### How to run the local examples\n\nStart a webserver (e.g. python SimpleHTTPServer from the project directory root):\n\n`python -m SimpleHTTPServer 1337 &`\n\nThen browse to \n\n`http://localhost:1337/examples/`\n\n\n## Get involved\n\nPlease have a look at the [contribution guidelines](CONTRIBUTE.md) before submitting contributions. \n\n**Disclaimer**: PRs can take time to receive feedback or be merged ( I'm only one person with very little time ) but I'm trying to get back to everyone eventually\n\n## Questions?\n\nIn order to keep technical questions in a central place where other people can learn from it, the best thing you can do is [post your question to stackoverflow with the tag **heatmap.js**.](http://stackoverflow.com/questions/ask?tags=heatmap.js) \n\nIf you do have a very specific question (or need commercial support) don't hesitate to contact me directly [via email](mailto:heatmap-q@patrick-wied.at).\n\n\n## Mailing list\n\nWant to receive the latest updates and news about heatmap.js? \n\nThere is a [mailing list](http://eepurl.com/0mmV5). No spam, just news and important updates.\n",
+  "readmeFilename": "README.md",
+  "version": "2.0.5"
+}
