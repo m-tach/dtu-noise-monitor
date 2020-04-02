@@ -1,23 +1,29 @@
-#include "gpsController.h"
-#include "CommunicationController.h"
-gpsCtlr gpsCtlr;
-void setup() {
-  // put your setup code here, to run once:
-  pinMode(LED_BUILTIN, OUTPUT);
-  pinMode(LED_BLUE, OUTPUT);
-  //THIS DEFINATION SHOULD BE HERE, COULD NOT BE REMOVED TO CONSTRUCTION FUNCTION
-  #if (GPS_INTERFACE == WIRE_BUS)
-     Wire.begin();
-  #elif (GPS_INTERFACE == SERIAL_BUS)
-    GPS_STREAM.begin(GPS_BAUD);
-  #endif
+/**
+ * @file Contains main loop for Arduino sketch for noise-monitor.
+ */
 
-    CONSOLE_STREAM.begin(CONSOLE_BAUD);
+#include "Arduino.h"
+#include <CommunicationController.h>
+#include <MicrophoneController.h>
+#include <Message.h>
+
+
+void setup() 
+{
+  initCommunication();
+  initADC();
 }
-void loop() {
-  // put your main code here, to run repeatedly:
-  test_function();
-  gpsCtlr.writeGPS(gpsCtlr.readConsole());
-  //GPS -> Console
-  gpsCtlr.writeConsole(gpsCtlr.readGPS());
+
+void loop() 
+{
+  sendMessage("\n Enter loop \n");
+  char buffer[512]; //create string buffer to transmit over USB
+  NoiseMonitorMessage message = {0, 0, 0, 0, 0, 0.0}; //instantiate message with all values set to 0
+  message.noiseLevel = readADC(); //read noise level from MicrophoneController
+  //TODO: read other things and populate message
+  message2Char(&message, buffer); //convert message to string
+  sendMessage(buffer);  //transmit string over USB
+  systemSleep(); //sleep - from Vittorio's code - i don't know why
+  //TODO: free up buffer to avoid memory leaks
+  sendMessage("Exit loop\n");
 }
