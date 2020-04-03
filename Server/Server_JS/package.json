@@ -1,5 +1,5 @@
 {
-  "name": "a",
+  "name": "Test",
   "version": "1.0.0",
   "description": "Test",
   "main": "8000",
@@ -13,7 +13,7 @@
   "keywords": [
     "you"
   ],
-  "author": "asd",
+  "author": "",
   "license": "UNLICENSED",
   "dependencies": {
     "body-parser": "^1.19.0",
