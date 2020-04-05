@@ -13,11 +13,11 @@
  */
 struct NoiseMonitorMessage
 {
-	uint32_t timestamp;
+	char timestamp[64];
 	uint8_t batteryVoltage;
 	int8_t boardTemperature;
-	uint32_t latitude;
-	uint32_t longitude;
+	double latitude;
+	double longitude;
 	float noiseLevel;
 };
 
