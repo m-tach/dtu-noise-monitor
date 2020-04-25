@@ -7,6 +7,7 @@
 #include <MicrophoneController.h>
 
 #define NS 20000
+const int pinAdc = A0;
 
 
 float SOS_A[3][6] = {
@@ -157,4 +158,17 @@ float readADC(void)
     sum = 0;
     
     return Leq;
+}
+
+long simpleReadADC(void)
+{
+    long sum = 0;
+    for(int i=0; i<32; i++)
+    {
+        sum += analogRead(pinAdc);
+    }
+
+    sum >>= 5;
+    return sum;
+
 }
