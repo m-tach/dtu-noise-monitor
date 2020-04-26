@@ -24,6 +24,10 @@ extern void initCommunication();
  */
 extern void sendMessage(char * message);
 
+extern void sendNumber(long message);
+
+extern int receiveMessage(void);
+
 
 #ifdef __cplusplus
 } // extern "C"

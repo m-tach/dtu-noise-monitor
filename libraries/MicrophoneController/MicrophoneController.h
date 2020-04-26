@@ -32,4 +32,6 @@ float readADC(void);
  */
 void systemSleep(void);
 
+long simpleReadADC(void);
+
 #endif // _MICROPHONE_CONTROLLER_h
