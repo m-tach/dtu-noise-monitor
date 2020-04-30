@@ -14,12 +14,14 @@
 
 /**
  * @brief Initiate the ADC on the board. 
+ * NOT VERIFIED
  * 
  */
 void initADC(void); 
 
 /**
  * @brief Reads the ADC value from the board. 
+ * NOT VERIFIED
  * 
  * @return a float representing the noise level.
  */
@@ -32,6 +34,14 @@ float readADC(void);
  */
 void systemSleep(void);
 
+/**
+ * Averages 32 samples.
+ */ 
+long averageReadADC(void);
+
+/**
+ * Returns a single sample.
+ */ 
 long simpleReadADC(void);
 
 #endif // _MICROPHONE_CONTROLLER_h

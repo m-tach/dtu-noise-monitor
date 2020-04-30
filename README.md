@@ -16,6 +16,15 @@ Design of a noise monitor (phonometer), implemented on an Arduino-based micropro
 ## Solution structure
 //TODO
 
+## How to use test program:
+1. Upload main.ino sketch to board
+2. Open Serial Monitor in Arduino IDE (Ctrl + Shift + M)
+3. Send an ENTER key
+4. Navigate through menu by choosing options (similar to DOS)
+5. While reading, on-board LED will flash BLUE; while waiting for you to select an option, it will be RED
+6. You can stop interrupt by sending a "Q"
+
+
 ## How to contribute to this project:
 For this project, we use modular development, to enable collaboration and reduce technical debt over time. This means that we employ [SRP](https://en.wikipedia.org/wiki/Single_responsibility_principle) for each new feature/functionality of the noise monitor. Bellow are the guidelines of how to implement an example feature for the project. 
 
@@ -45,5 +54,6 @@ struct NoiseMonitorMessage
 ## Useful links/tutorials
 - https://thingsboard.io/docs/user-guide/integrations/sodaq/
 - https://github.com/SodaqMoja/Sodaq_Universal_Tracker
+- http://wiki.seeedstudio.com/Grove-Sound_Sensor/
 
 

@@ -160,7 +160,10 @@ float readADC(void)
     return Leq;
 }
 
-long simpleReadADC(void)
+/**
+ * Averages 32 samples.
+ */ 
+long averageReadADC(void)
 {
     long sum = 0;
     for(int i=0; i<32; i++)
@@ -170,5 +173,12 @@ long simpleReadADC(void)
 
     sum >>= 5;
     return sum;
+}
 
+/**
+ * Returns a single sample.
+ */ 
+long simpleReadADC(void)
+{
+    return analogRead(pinAdc);
 }
