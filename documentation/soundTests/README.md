@@ -26,21 +26,21 @@ Step-by-step instructions:
 - file “different_sounds_2": 
     44-45 dB SPL when playing the 3rd sound from the beginning.
 - file “sinusoid_sequence” : 
-  This file is structured as follows:
-    0  to 10 s : SINUSOIDAL WAVE AT 200 Hz —— 58.8 dB
-    10 to 20 s: SILENCE
-    20  to 30 s : SINUSOIDAL WAVE AT 300 Hz —— 70 dB
-    30 to 40 s: SILENCE
-    40  to 50 s : SINUSOIDAL WAVE AT 440 Hz	——68.2 dB
-    50 to 60 s: SILENCE
-    60  to 70 s : SINUSOIDAL WAVE AT 500 Hz	—— 66.5 dB
-    70 to 80 s: SILENCE
-    80  to 90 s : SINUSOIDAL WAVE AT 2000 Hz	—— 72.3 dB
-    90 to 100 s: SILENCE
-    100  to 110 s : SINUSOIDAL WAVE AT 3000 Hz	—— 72 dB
-    110 to 120  s: SILENCE
-    120  to 130 s : SINUSOIDAL WAVE AT 5000 Hz	—— 26.8 dB
-    130 to —  s: SILENCE
+  This file is structured as follows:  
+    0  to 10 s : SINUSOIDAL WAVE AT 200 Hz —— 58.8 dB  
+    10 to 20 s: SILENCE  
+    20  to 30 s : SINUSOIDAL WAVE AT 300 Hz —— 70 dB  
+    30 to 40 s: SILENCE  
+    40  to 50 s : SINUSOIDAL WAVE AT 440 Hz	——68.2 dB  
+    50 to 60 s: SILENCE  
+    60  to 70 s : SINUSOIDAL WAVE AT 500 Hz	—— 66.5 dB  
+    70 to 80 s: SILENCE  
+    80  to 90 s : SINUSOIDAL WAVE AT 2000 Hz	—— 72.3 dB  
+    90 to 100 s: SILENCE  
+    100  to 110 s : SINUSOIDAL WAVE AT 3000 Hz	—— 72 dB  
+    110 to 120  s: SILENCE  
+    120  to 130 s : SINUSOIDAL WAVE AT 5000 Hz	—— 26.8 dB  
+    130 to —  s: SILENCE  
 - file “20680__acclivity__testtones” : 50-51 dB on the phone app when playing the 100 Hz 	sound at t = 45s from the beginning of the file
 
 **NOTE:** I also attach single files of different tones. I think that these one are more simple to use when we have to calibrate the speaker volume. 
