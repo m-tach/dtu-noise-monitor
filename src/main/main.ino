@@ -15,7 +15,6 @@ void setup()
   toggleLED(RED);
   initLeds();  
   initCommunication();
-  initADC();
   sodaq_gps.init(GPS_ENABLE);
   toggleLED(RED);
 }
@@ -29,6 +28,8 @@ void loop()
     
     if(mode == SendMessageToServer)
     {
+        initADC();
+
         while (true) 
         {
           toggleLED(BLUE);
@@ -69,7 +70,7 @@ void loop()
           sendMessage(",");
           sendNumber(simpleReadADC());
           sendMessage("\n");
-          delay(200);
+          delay(10);
           if (exitRequested())
           {
             break;
