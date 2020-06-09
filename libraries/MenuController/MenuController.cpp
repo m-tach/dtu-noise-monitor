@@ -14,6 +14,8 @@ int waitForUser(void)
 			return 1;		
 		} else if (messageReceived == 50){
 			return 2;
+		} else if (messageReceived == 51){
+			return 3;
 		}
 	}
     
@@ -91,6 +93,7 @@ enum MenuOption selectModeOfOperation()
 	sendMessage("Please select mode of operation: \n");
 	sendMessage("   1: Send message to server \n");
 	sendMessage("   2: Sound test for board \n");
+	sendMessage("   3: Test battery monitor \n");
 	toggleLED(RED);
 	int result = waitForUser();
 	sendMessage("==============================================\n");
@@ -105,6 +108,17 @@ enum MenuOption selectModeOfOperation()
 			sendMessage("Mode selected: Sound test for board\n"); 
 			sendMessage("==============================================\n");
 			return SoundTestForBoard;
+		case 3:
+			sendMessage("Mode selected: test battery monitor\n");
+			sendMessage("==============================================\n");
+			return TestBatteryMonitor;
 	}
 
+}
+
+enum MenuOption testBatteryMonitor()
+{
+	int choice = 0;
+
+	
 }
