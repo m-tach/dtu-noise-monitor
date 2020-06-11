@@ -15,7 +15,8 @@ enum MenuOption {
     SendMessageToServer = 1,
     SoundTestForBoard = 2,
     CalibrateSpeakersInstructions = 3, 
-    BeginSoundTest = 4
+    BeginSoundTest = 4,
+    TestBatteryMonitor = 5
 };
 
 enum MenuOption selectModeOfOperation();

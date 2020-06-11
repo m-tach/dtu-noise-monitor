@@ -14,7 +14,7 @@
 struct NoiseMonitorMessage
 {
 	char timestamp[64];
-	uint8_t batteryVoltage;
+	uint16_t batteryVoltage;
 	int8_t boardTemperature;
 	double latitude;
 	double longitude;

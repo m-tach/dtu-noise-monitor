@@ -9,6 +9,7 @@
 #include <MenuController.h>
 #include <Sodaq_UBlox_GPS.h>
 #include <LedController.h>
+#include <BatteryController.h>
 
 void setup() 
 {
@@ -39,6 +40,7 @@ void loop()
           message.noiseLevel = readADC(); //read noise level from MicrophoneController    
           message.latitude = sodaq_gps.getLat();
           message.longitude = sodaq_gps.getLon();
+          message.batteryVoltage = getBatteryVoltage(); 
           strncpy(timestampBuffer, sodaq_gps.getDateTimeString().c_str(), sizeof(timestampBuffer));
           strncpy(message.timestamp, timestampBuffer, 64);
           message2Char(&message, buffer); //convert message to string
@@ -77,6 +79,25 @@ void loop()
           }
         }
       }      
+    }
+    else if (mode == TestBatteryMonitor)
+    {
+      unsigned long startTime = millis();
+      while (true)
+      {
+        toggleLED(BLUE);
+        unsigned long currentTime = millis();
+        unsigned long elapsedTime = currentTime - startTime;
+        sendNumber(elapsedTime);
+        sendMessage(",");
+        sendNumber(getBatteryVoltage());
+        sendMessage("\n");
+        delay(100);
+        if (exitRequested())
+        {
+          break;
+        }
+      }
     }
     
 }
