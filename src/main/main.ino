@@ -10,7 +10,8 @@
 #include <Sodaq_UBlox_GPS.h>
 #include <LedController.h>
 #include <BatteryController.h>
-
+long analogReadValue[32] = {};
+int count = 0;
 void setup() 
 {
   toggleLED(RED);
@@ -26,7 +27,7 @@ void loop()
     waitForEnter();
     MenuOption mode = None;
     mode = selectModeOfOperation();
-    
+    float rms = 0.0;
     if(mode == SendMessageToServer)
     {
         initADC();
@@ -71,8 +72,13 @@ void loop()
           sendNumber(elapsedTime);
           sendMessage(",");
           sendNumber(simpleReadADC());
+          sendMessage(",");
+          rms = RMSCalculation();
           sendMessage("\n");
-          delay(10);
+          sendNumber(rms);
+          sendMessage("\n");
+          //delay(10);
+          delayMicroseconds(100);
           if (exitRequested())
           {
             break;
@@ -100,4 +106,28 @@ void loop()
       }
     }
     
+}
+float RMSCalculation(void){
+    int square_sum = 0;
+    float rms_value = 0;
+    while(count < 32){
+        analogReadValue[count] = simpleReadADC();
+        count++;
+        //delayMicroseconds(100);
+    }
+  // sendNumber(count);
+ //  sendMessage(",");
+
+    // while(doneRmsFlag == 1){};
+    // doneRmsFlag = 1;
+    if(count == 32){
+        for(int i = 0; i< 32;i++){
+            square_sum = square_sum + pow(analogReadValue[i],2);
+        }
+        //sendNumber(square_sum);
+        rms_value = sqrt(square_sum/32);
+    }
+    //doneRmsFlag = 0;
+     count = 0;
+    return rms_value;
 }
